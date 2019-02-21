@@ -99,9 +99,11 @@ iptables -t mangle -A V2RAY_MASK -p udp -j TPROXY --on-port 12345 --tproxy-mark 
 iptables -t mangle -A PREROUTING -p udp -j V2RAY_MASK
 ```
 
-6. 使用电脑/手机尝试直接访问被墙网站，这时应该是可以访问的（如果不能，你可能得请教大神手把手指导了）。
+6. 如果用来设置透明代理的设备不是路由器，请将其他设备的默认网关指向该设备。
 
-7. 写开机自动加载上述的 iptables 的脚本，或者使用第三方软件(如 iptables-persistent)，否则网关重启后 iptables 会失效(即透明代理会失效)。
+7. 使用电脑/手机尝试直接访问被墙网站，这时应该是可以访问的（如果不能，你可能得请教大神手把手指导了）。
+
+8. 写开机自动加载上述的 iptables 的脚本，或者使用第三方软件(如 iptables-persistent)，否则网关重启后 iptables 会失效(即透明代理会失效)。
 
 
 ## 注意事项
